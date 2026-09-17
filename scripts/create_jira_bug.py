@@ -6,9 +6,9 @@ import requests
 # JIRA_EMAIL = os.environ["JIRA_EMAIL"]
 # JIRA_API_TOKEN = os.environ["JIRA_API_TOKEN"]
  
-JIRA_URL="https://test201983.atlassian.net/"
-JIRA_EMAIL="phani201983@gmail.com"
-JIRA_API_TOKEN="ATATT3xFfGF0syJcaIoGS0QX7dXcefABsPAuLF1345eB2o6p_ms2HjsZoo9AsN6_4jQk6maZ7FekGFGVA23cF54-msQhY1kyo3YUlus_0seeBqCAR2CuZ876wLtzP_2mCBaWjc91pai0Rpr5Yo7chxhwH33pxv_62kqYBc6S4TuKpYKz2bHwSN0=CF0FA430"
+JIRA_URL="https://swamypte.atlassian.net/"
+JIRA_EMAIL="swamy.pte@gmail.com"
+JIRA_API_TOKEN="ATATT3xFfGF0lveLE1YwlgAkXvSjoio5qz6BWSY8kBk7oBmOOaXZeUwgBCgly6yLF-fsW3RLt8gbrbY64m98EoDSZtNgwE7xUvaSpMIFSp7PQXwz-MTysttdAqPkP48SkTLwKyTcevegQQNlQrTmcjwEgCaIxYi4eOFotKMN50HMVH7I6aKfWJ0=2F7D4706"
 payload = {
     "fields": {
         "project": {
