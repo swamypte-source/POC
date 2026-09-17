@@ -102,20 +102,20 @@ for service in app_data["services"]:
             )
  
     # Retry Policy
-    if not service.get("retryPolicy", False):
-        score -= 5
+    # if not service.get("retryPolicy", False):
+    #     score -= 5
  
-    # Bulkhead
-    if not service.get("bulkhead", False):
-        score -= 10
+    # # Bulkhead
+    # if not service.get("bulkhead", False):
+    #     score -= 10
  
-    # Timeout Policy    
-    if not service.get("timeoutPolicy", False):
-        score -= 5
+    # # Timeout Policy    
+    # if not service.get("timeoutPolicy", False):
+    #     score -= 5
  
-    # Rate Limiting
-    if not service.get("rateLimiting", False):
-        score -= 5
+    # # Rate Limiting
+    # if not service.get("rateLimiting", False):
+    #     score -= 5
  
     # Prevent negative scores
     if score < 0:

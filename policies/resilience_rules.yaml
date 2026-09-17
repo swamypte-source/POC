@@ -14,19 +14,19 @@ policies:
   # High Availability
   replicas:
     enabled: true
-    weight: 10
+    weight: 1
     minimum_replicas: 2
  
   # Health Checks
   health_check:
     enabled: true
-    weight: 5
+    weight: 1
     required: true
  
   # Resource Limits & Requests
   resources:
     enabled: true
-    weight: 5
+    weight: 1
     required: true
  
   # Database Backup
@@ -80,7 +80,7 @@ policies:
   # Circuit Breaker
   circuit_breaker:
     enabled: true
-    weight: 10
+    weight: 1
     required: true
  
   #Resilience Patterns
@@ -91,7 +91,7 @@ policies:
   #Bulkhead Isolation
   bulkhead:
     enabled: true
-    weight: 5
+    weight: 1
  
   #Timeout Policy
   timeout_policy:
