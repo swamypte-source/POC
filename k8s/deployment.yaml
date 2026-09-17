@@ -19,7 +19,7 @@ spec:
       containers:
       - name: sample-app
  
-        image: gcchackthon/sample-app:1.0
+        image: gcchackthon/sample-app:latest
  
         imagePullPolicy: IfNotPresent
  
