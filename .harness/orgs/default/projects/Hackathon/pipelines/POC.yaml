@@ -1,0 +1,83 @@
+pipeline:
+  name: POC
+  identifier: POC
+  projectIdentifier: Hackathon
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: pocconnector
+        build: <+input>
+  stages:
+    - stage:
+        name: pocdeploy
+        identifier: pocdeploy
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: pockconnector
+              namespace: hackathon-demo
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: GitClone
+                  name: GitClone_1
+                  identifier: GitClone_1
+                  spec:
+                    connectorRef: pocconnector
+                    build:
+                      type: branch
+                      spec:
+                        branch: main
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: pocdocker
+                    image: python:3.11
+                    shell: Sh
+                    command: |-
+                      echo "Source Code Downloaded"
+
+                      pwd
+                      ls -la
+
+                      python --version
+              - step:
+                  type: Run
+                  name: Run_2
+                  identifier: Run_2
+                  spec:
+                    connectorRef: pocdocker
+                    image: python:3.11
+                    shell: Sh
+                    command: |-
+                      pip install -r requirements.txt
+
+                      echo "Reading application.yaml"
+
+                      cat architecture/application.yaml
+
+                      echo "Executing Resilience Assessment"
+
+                      python3 scripts/resilience_check.py
+
+                      python3 scripts/report_generator.py
+
+                      python3 scripts/policy_check.py
+
+                      echo "cat reports/result.json"
