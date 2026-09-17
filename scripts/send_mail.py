@@ -39,7 +39,10 @@ if report_file.exists():
 else:
     print("WARNING: report.html not found")
  
-with smtplib.SMTP_SSL("smtp.gmail.com", 587) as smtp:
+with smtplib.SMTP("smtp.gmail.com", 587,timeout=30) as smtp:
+    smtp.ehlo()
+    smtp.starttls()
+    smtp.ehlo()
     smtp.login(sender, app_password)
     smtp.send_message(msg)
  
