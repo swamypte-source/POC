@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app
+  namespace: resilience-demo
+ 
+spec:
+  replicas: 3
+ 
+  selector:
+    matchLabels:
+      app: sample-app
+ 
+  template:
+    metadata:
+      labels:
+        app: sample-app
+        chaos-target: "true"
+ 
+    spec:
+      containers:
+      - name: sample-app
+        image: sample-app:latest

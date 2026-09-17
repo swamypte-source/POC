@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-app-config
+  namespace: resilience-demo
+ 
+data:
+  APP_NAME: SampleApp
+  ENVIRONMENT: Demo

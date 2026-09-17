@@ -1,0 +1,133 @@
+# policies/resilience_rules.yaml
+ 
+framework:
+  name: Resilience Assessment Framework
+  version: 1.0
+ 
+scoring:
+  max_score: 100
+  passing_score: 90
+  warning_score: 70
+ 
+policies:
+ 
+  # High Availability
+  replicas:
+    enabled: true
+    weight: 20
+    minimum_replicas: 2
+ 
+  # Health Checks
+  health_check:
+    enabled: true
+    weight: 10
+    required: true
+ 
+  # Resource Limits & Requests
+  resources:
+    enabled: true
+    weight: 10
+    required: true
+ 
+  # Database Backup
+  backup:
+    enabled: true
+    weight: 15
+    required: true
+ 
+  # Autoscaling
+  autoscaling:
+    enabled: true
+    weight: 10
+    required: true
+ 
+  # Pod Disruption Budget
+  pod_disruption_budget:
+    enabled: true
+    weight: 5
+    required: true
+ 
+  # Chaos Testing
+  chaos_testing:
+    enabled: true
+    weight: 10
+    required: true
+ 
+  # TLS Security
+  tls:
+    enabled: true
+    weight: 5
+    required: true
+ 
+  # Monitoring
+  monitoring:
+    enabled: true
+    weight: 5
+    required: true
+ 
+  # Logging
+  logging:
+    enabled: true
+    weight: 5
+    required: true
+ 
+  # Distributed Tracing
+  tracing:
+    enabled: true
+    weight: 5
+    required: true
+ 
+  # Circuit Breaker
+  circuit_breaker:
+    enabled: true
+    weight: 10
+    required: true
+ 
+  #Resilience Patterns
+  retry_policy:
+    enabled: true
+    weight: 5
+ 
+  #Bulkhead Isolation
+  bulkhead:
+    enabled: true
+    weight: 10
+ 
+  #Timeout Policy
+  timeout_policy:
+    enabled: true
+    weight: 5
+ 
+  #Rate Limiting
+  rate_limiting:
+    enabled: true
+    weight: 5
+ 
+  #Dead Letter Queue
+  dead_letter_queue:
+    enabled: true
+    weight: 10
+ 
+  #Service Mesh
+  service_mesh:
+    enabled: true
+    weight: 10
+ 
+  #API Gateway
+  api_gateway:
+    enabled: true
+    weight: 5
+ 
+evaluation:
+ 
+  pass:
+    minimum_score: 90
+    action: DEPLOY
+ 
+  warning:
+    minimum_score: 70
+    action: MANUAL_APPROVAL
+ 
+  fail:
+    minimum_score: 0
+    action: BLOCK_DEPLOYMENT

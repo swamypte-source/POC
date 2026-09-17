@@ -1,0 +1,13 @@
+application:
+  name: sample-app
+  namespace: default
+ 
+target:
+  url: http://localhost:5000/api/orders
+ 
+assessment:
+  request_count: 30
+  timeout: 3
+ 
+report:
+  output_folder: reports
