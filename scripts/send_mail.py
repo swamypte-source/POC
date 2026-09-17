@@ -46,4 +46,4 @@ with smtplib.SMTP("smtp.gmail.com", 587,timeout=30) as smtp:
     smtp.login(sender, app_password)
     smtp.send_message(msg)
  
-print("Email sent successfully") 
+print("Email sent successfully")
