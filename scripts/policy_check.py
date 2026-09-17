@@ -21,12 +21,12 @@ if actual_score < required_score:
     print("FAIL - Deployment Blocked")
     print("Current Directory:", os.getcwd())
     print("Scripts Folder:", os.listdir("reports"))
-    # subprocess.run([
-    #     "python",
-    #     "scripts/send_mail.py",
-    #     str(actual_score),
-    #     "FAIL"
-    # ])
+    subprocess.run([
+        "python",
+        "scripts/send_mail.py",
+        str(actual_score),
+        "FAIL"
+    ])
  
     subprocess.run([
         "python", "scripts/create_jira_bug.py"],
