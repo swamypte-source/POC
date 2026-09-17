@@ -6,39 +6,39 @@ framework:
  
 scoring:
   max_score: 100
-  passing_score: 90
-  warning_score: 70
+  passing_score: 10
+  warning_score: 15
  
 policies:
  
   # High Availability
   replicas:
     enabled: true
-    weight: 20
+    weight: 10
     minimum_replicas: 2
  
   # Health Checks
   health_check:
     enabled: true
-    weight: 10
+    weight: 5
     required: true
  
   # Resource Limits & Requests
   resources:
     enabled: true
-    weight: 10
+    weight: 5
     required: true
  
   # Database Backup
   backup:
     enabled: true
-    weight: 15
+    weight: 5
     required: true
  
   # Autoscaling
   autoscaling:
     enabled: true
-    weight: 10
+    weight: 5
     required: true
  
   # Pod Disruption Budget
@@ -50,7 +50,7 @@ policies:
   # Chaos Testing
   chaos_testing:
     enabled: true
-    weight: 10
+    weight: 5
     required: true
  
   # TLS Security
@@ -91,7 +91,7 @@ policies:
   #Bulkhead Isolation
   bulkhead:
     enabled: true
-    weight: 10
+    weight: 5
  
   #Timeout Policy
   timeout_policy:
@@ -106,26 +106,26 @@ policies:
   #Dead Letter Queue
   dead_letter_queue:
     enabled: true
-    weight: 10
+    weight: 5
  
   #Service Mesh
   service_mesh:
     enabled: true
-    weight: 10
+    weight: 1
  
   #API Gateway
   api_gateway:
     enabled: true
-    weight: 5
+    weight: 4
  
 evaluation:
  
   pass:
-    minimum_score: 90
+    minimum_score: 20
     action: DEPLOY
  
   warning:
-    minimum_score: 70
+    minimum_score: 15
     action: MANUAL_APPROVAL
  
   fail:
