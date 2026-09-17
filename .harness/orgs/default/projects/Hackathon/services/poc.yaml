@@ -1,0 +1,9 @@
+service:
+  name: pocservice
+  identifier: pocservice
+  serviceDefinition:
+    type: Kubernetes
+    spec: {}
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: Hackathon
