@@ -12,3 +12,4 @@ html = f"""
  
 with open("reports/report.html","w") as f:
     f.write(html)
+    
