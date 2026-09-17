@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: pocinfra
+  identifier: pocinfra
+  orgIdentifier: default
+  projectIdentifier: Hackathon
+  environmentRef: pocenv
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: pockconnector
+    namespace: resilience-demo
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
