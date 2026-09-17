@@ -7,7 +7,7 @@ score = sys.argv[1]
 status = sys.argv[2]
  
 sender = "swamy.pte@gmail.com"
-app_password = "wtwo dtqx osop hehp"
+app_password = "ykab arbo tpiu vmdu"
  
 receiver = "swamy.pte@gmail.com"
  
