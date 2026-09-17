@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-app
-  namespace: resilience-demo
+  name: sample-demo-app
+  namespace: resilience
 spec:
   replicas: 3
  
   selector:
     matchLabels:
-      app: sample-app
+      app: sample-demo-app
  
   template:
     metadata:
       labels:
-        app: sample-app
+        app: sample-demo-app
  
     spec:
       containers:
-      - name: sample-app
+      - name: sample-demo-app
  
-        image: gcchackthon/sample-app:latest
+        image: gcchackthon/sample-demo-app:latest
  
         imagePullPolicy: IfNotPresent
  

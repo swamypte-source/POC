@@ -2,12 +2,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
  
 metadata:
-  name: sample-app-ingress
-  namespace: resilience-demo
+  name: sample-demo-app-ingress
+  namespace: resilience
  
 spec:
   rules:
-  - host: sample-app.local
+  - host: sample-demo-app.local
  
     http:
       paths:
@@ -16,7 +16,7 @@ spec:
  
         backend:
           service:
-            name: sample-app-service
+            name: sample-demo-app-service
  
             port:
               number: 80

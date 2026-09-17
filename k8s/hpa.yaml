@@ -3,14 +3,14 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
  
 metadata:
-  name: sample-app-hpa
-  namespace: resilience-demo
+  name: sample-demo-app-hpa
+  namespace: resilience
  
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: sample-app
+    name: sample-demo-app
  
   minReplicas: 3
   maxReplicas: 10
