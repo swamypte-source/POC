@@ -1,0 +1,14 @@
+inputSet:
+  name: pocinputset
+  identifier: pocinputset
+  orgIdentifier: default
+  projectIdentifier: Hackathon
+  pipeline:
+    identifier: POC
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
