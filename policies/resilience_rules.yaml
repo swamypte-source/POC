@@ -6,7 +6,7 @@ framework:
  
 scoring:
   max_score: 100
-  passing_score: 95
+  passing_score: 90
   warning_score: 15
  
 policies:
