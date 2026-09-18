@@ -7,7 +7,7 @@ framework:
 scoring:
   max_score: 100
   passing_score: 90
-#  warning_score: 15
+  warning_score: 15
  
 policies:
  
@@ -124,9 +124,9 @@ evaluation:
     minimum_score: 20
     action: DEPLOY
  
- # warning:
-  #  minimum_score: 15
-   # action: MANUAL_APPROVAL
+  warning:
+    minimum_score: 15
+    action: MANUAL_APPROVAL
  
   fail:
     minimum_score: 0
