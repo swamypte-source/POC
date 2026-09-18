@@ -1,27 +1,27 @@
-name: Resilience Assessment
- 
-on:
-  push:
-    branches:
-      - main
- 
-jobs:
-  assessment:
- 
-    runs-on: ubuntu-latest
- 
-    steps:
- 
-      - name: Checkout
-        uses: actions/checkout@v4
- 
-      - name: Setup Python
-        uses: actions/setup-python@v5
- 
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
- 
-      - name: Execute Assessment
-        run: |
-          python main.py
+# name: Resilience Assessment
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   assessment:
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+
+#       - name: Checkout
+#         uses: actions/checkout@v4
+
+#       - name: Setup Python
+#         uses: actions/setup-python@v5
+
+#       - name: Install Dependencies
+#         run: |
+#           pip install -r requirements.txt
+
+#       - name: Execute Assessment
+#         run: |
+#           python main.py
