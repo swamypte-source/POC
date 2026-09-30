@@ -1,4 +1,3 @@
-import os
 import subprocess
 import yaml
 import json
@@ -17,7 +16,6 @@ actual_score = result["score"]
 print(f"Required Score : {required_score}")
 print(f"Actual Score : {actual_score}")
  
-if actual_score < required_score:
     print("FAIL - Deployment Blocked")
     print("Current Directory:", os.getcwd())
     print("Scripts Folder:", os.listdir("reports"))
@@ -36,3 +34,6 @@ if actual_score < required_score:
     sys.exit(1)
  
 print("PASSED: Deployment Approved") 
+
+if actual_score < required_score:
+import os
