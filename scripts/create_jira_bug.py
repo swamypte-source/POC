@@ -8,7 +8,7 @@ import requests
  
 JIRA_URL="https://swamypte.atlassian.net/"
 JIRA_EMAIL="swamy.pte@gmail.com"
-JIRA_API_TOKEN="ATATT3xFfGF0XpOV67MqjnQSLx5qIysNQe5vZNArAkPV3QPWb98kYo0pSHSw_ERFJkjPN7yi4rOd6xU6sbAFBcoAX6RTQwn3m2M2Arn_CZHzRCdoHMCBIG05qiUiiuolPpRg2c99Wz2iTapLQhhmiLzS90LE2r42UO9KYpU4fKSYbIG5qQCnXf4=8F1891EC"
+JIRA_API_TOKEN="ATATT3xFfGF0a84iiY9U6_kukbrKajmlsFJoWmqJvnfpORbJllBhji1Tumq7Y46jOXeuEUORwQ8wqtZ3YmEVr4C-e0RC22wkBlPqr6Xd0Lp3bhGhBG96XzsWSA_77pla6gSqV8IpZX3oHevs7skerRYO98-XP7_koC-JJ9z789XqPSHrzZUj04k=458D8E43"
 payload = {
     "fields": {
         "project": {
