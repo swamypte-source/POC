@@ -65,4 +65,3 @@ if response.status_code in [200, 201]:
         print("report.html not found")
 else:
     print("Failed to create Jira issue")
- 
