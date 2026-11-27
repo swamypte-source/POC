@@ -20,4 +20,4 @@ spec:
     spec:
       containers:
       - name: sample-demo-app
-        image: sample-demo-app:latest
+        image: gcchackthon/sample-demo-app:latest
