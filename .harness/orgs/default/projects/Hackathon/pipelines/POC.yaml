@@ -122,3 +122,28 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+    - stage:
+        name: loadrunner_test
+        identifier: loadrunner_test
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: PowerShell
+                    executionTarget: {}
+                    delegateSelectors:
+                      - helm-delegate
+                    source:
+                      type: Inline
+                      spec:
+                        script: $lr = "C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe" & $lr -Run -TestPath "C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
