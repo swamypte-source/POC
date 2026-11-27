@@ -173,7 +173,10 @@ pipeline:
                               source:
                                 type: Inline
                                 spec:
-                                  script: uname -a
+                                  script: |-
+                                    ssh harnesssvc@GCCHackVM
+
+                                    "C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe" -Run -TestPath "C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs"
                               environmentVariables: []
                               outputVariables: []
                             timeout: 10m
