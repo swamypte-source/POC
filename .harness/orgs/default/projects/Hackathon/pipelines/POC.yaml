@@ -142,7 +142,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: $lr = "C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe" & $lr -Run -TestPath "C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs"
+                        script: powershell.exe -ExecutionPolicy Bypass -Command "$lr='C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe'; & $lr -Run -TestPath 'C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs'"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
