@@ -175,8 +175,10 @@ pipeline:
                                 spec:
                                   script: |-
                                     ssh GCCHackVM@10.15.0.56
-
-                                    "C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe" -Run -TestPath "C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs"
+                                    ssh -o StrictHostKeyChecking=no \
+                                        -o UserKnownHostsFile=/dev/null \
+                                        GCCHackVM@10.15.0.56 \
+                                        'cmd /c "\"C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe\" -Run -TestPath \"C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs\""'
                               environmentVariables: []
                               outputVariables: []
                             timeout: 10m
