@@ -145,7 +145,21 @@ pipeline:
                               source:
                                 type: Inline
                                 spec:
-                                  script: uname -a
+                                  script: |-
+                                    NAMESPACE=resilience
+                                    LABEL="app=sample-demo-app"
+
+                                    POD=$(kubectl get pods -n "$NAMESPACE" -l "$LABEL" \
+                                      -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' \
+                                      | shuf -n 1)
+
+                                    if [ -z "$POD" ]; then
+                                      echo "No pod found."
+                                      exit 1
+                                    fi
+
+                                    echo "Selected pod: $POD"
+                                    kubectl delete pod "$POD" -n "$NAMESPACE"
                               environmentVariables: []
                               outputVariables: []
                             timeout: 10m
