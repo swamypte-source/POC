@@ -174,7 +174,7 @@ pipeline:
                                 type: Inline
                                 spec:
                                   script: |-
-                                    ssh harnesssvc@GCCHackVM
+                                    ssh GCCHackVM@ILB-3790VM-42
 
                                     "C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe" -Run -TestPath "C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs"
                               environmentVariables: []
