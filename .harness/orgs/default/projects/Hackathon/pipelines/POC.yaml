@@ -135,7 +135,7 @@ pipeline:
                   name: ShellScript_1
                   identifier: ShellScript_1
                   spec:
-                    shell: PowerShell
+                    shell: Bash
                     executionTarget: {}
                     delegateSelectors:
                       - helm-delegate
