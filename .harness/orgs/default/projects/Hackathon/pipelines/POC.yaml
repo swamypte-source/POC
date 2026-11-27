@@ -175,9 +175,8 @@ pipeline:
                                 spec:
                                   script: |-
                                     ssh GCCHackVM@10.15.0.56
-                                    ssh -o StrictHostKeyChecking=no \
-                                        -o UserKnownHostsFile=/dev/null \
-                                        GCCHackVM@10.15.0.56 \
+                                    sshpass -p "GCCHackathon2026" ssh -o StrictHostKeyChecking=no \
+                                        GCCHackVM@10.15.0.56 "ILB-3790VM-42"  \
                                         'cmd /c "\"C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe\" -Run -TestPath \"C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs\""'
                               environmentVariables: []
                               outputVariables: []
