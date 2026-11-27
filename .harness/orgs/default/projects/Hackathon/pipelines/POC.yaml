@@ -130,23 +130,37 @@ pipeline:
         spec:
           execution:
             steps:
-              - step:
-                  type: ShellScript
-                  name: ShellScript_1
-                  identifier: ShellScript_1
-                  spec:
-                    shell: Bash
-                    executionTarget: {}
-                    delegateSelectors:
-                      - helm-delegate
-                    source:
-                      type: Inline
-                      spec:
-                        script: |-
-                          uname -a
-                          pwd
-                          ls /
-                    environmentVariables: []
-                    outputVariables: []
-                  timeout: 10m
+              - stepGroup:
+                  name: loadrunner_test
+                  identifier: loadrunner_test
+                  steps:
+                    - parallel:
+                        - step:
+                            type: ShellScript
+                            name: ShellScript_3
+                            identifier: ShellScript_3
+                            spec:
+                              shell: Bash
+                              executionTarget: {}
+                              source:
+                                type: Inline
+                                spec:
+                                  script: uname -a
+                              environmentVariables: []
+                              outputVariables: []
+                            timeout: 10m
+                        - step:
+                            type: ShellScript
+                            name: ShellScript_2
+                            identifier: ShellScript_2
+                            spec:
+                              shell: Bash
+                              executionTarget: {}
+                              source:
+                                type: Inline
+                                spec:
+                                  script: uname -a
+                              environmentVariables: []
+                              outputVariables: []
+                            timeout: 10m
         tags: {}
