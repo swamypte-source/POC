@@ -143,12 +143,9 @@ pipeline:
                       type: Inline
                       spec:
                         script: |-
-                          Invoke-Command -ComputerName ILB-3790VM-42 `
-                            -ScriptBlock {
-                                & "C:\Program Files (x86)\OpenText\LoadRunner\bin\Wlrun.exe" `
-                                  -Run `
-                                  -TestPath "C:\Users\GCCHackVM\Documents\Controller\scenario\Hackathon_POC.lrs"
-                            }
+                          uname -a
+                          pwd
+                          ls /
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
